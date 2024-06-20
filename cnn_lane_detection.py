@@ -21,11 +21,6 @@ from scipy.ndimage import zoom
 from moviepy.editor import VideoFileClip
 from tensorflow import keras
 
-# Function to replace imresize using scipy.ndimage.zoom
-# def imresize(arr, size):
-#     zoom_factors = [n / float(o) for n, o in zip(size, arr.shape)]
-#     return zoom(arr, zoom_factors, order=3)  # order=3 is cubic interpolation
-
 def imresize(arr, size):
     if arr.ndim == 3:
         resized = np.zeros((size[0], size[1], arr.shape[2]), dtype=arr.dtype)
